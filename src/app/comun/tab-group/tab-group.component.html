@@ -1,0 +1,9 @@
+<div class="dv-tab-labels" #tabsContiner>
+  <ng-container *ngFor="let tab of tabs; index as i">
+    <div class="dv-tab-label" (click)="setTab(tab, i)" [ngClass]="{'dv-tab-label-selected':tab.selected}">
+      <div class="dv-tab-label-text">{{tab.label}}</div>
+    </div>
+  </ng-container>
+</div>
+<ng-template class="dv-tab-container" #contenido></ng-template>
+<ng-template dv-tab></ng-template>

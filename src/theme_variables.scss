@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+
+$mat-light-sidenav-theme-background: (
+  status-bar: map_get($mat-orange, 200),
+  app-bar:    map_get($mat-orange, 50),
+  background: white,
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       map_get($mat-orange, 100),
+  dialog:     map_get($mat-orange, 50),
+  disabled-button: $black-12-opacity,
+  raised-button: white,
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-orange, 200),
+  selected-disabled-button: map_get($mat-orange, 400),
+  disabled-button-toggle: map_get($mat-orange, 100),
+  unselected-chip: map_get($mat-orange, 200),
+  disabled-list-option: map_get($mat-orange, 100),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+$app-primary: mat-palette($mat-orange);
+$app-accent:  mat-palette($mat-lime);
+$app-warn:    mat-palette($mat-orange);
+
+$toolbar-primary: mat-palette($mat-orange, 800, 300, A200);
+$toolbar-accent:  mat-palette($mat-lime, 200, 700, A400);
+
+$sidenav-primary: mat-palette($mat-orange, 300, 800, A400);
+$sidenav-accent:  mat-palette($mat-lime, 700, 200, A200);
+$sidenav-foreground: mat-palette($mat-lime, 700, 200, A200);
+$sidenav-background: $mat-light-sidenav-theme-background;
+
+// Custom Sass colors vars (will be available in all the project)
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
+$light: false;
+$dark:true;
+
+@function mat-theme($type, $primary, $accent, $warn, $foreground, $background) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: $type,
+    foreground: $mat-light-theme-foreground,
+    background: $background,
+  );
+};

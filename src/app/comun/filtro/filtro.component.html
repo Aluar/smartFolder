@@ -1,0 +1,27 @@
+<div class="filtro  mat-app-background">
+	<mat-form-field class="fill-context">
+	  <input matInput placeholder="Buscar" [(ngModel)]="texto">     
+	  <mat-icon matSuffix class="mdi mdi-24px mdi-magnify"></mat-icon>
+	</mat-form-field>
+	<mat-expansion-panel #tagsPanel>
+	  <mat-expansion-panel-header>
+		<mat-panel-title>
+		  Tags
+		</mat-panel-title>
+		<mat-panel-description>
+		  <mat-chip-list>
+			<mat-chip *ngFor="let tag of filtros.tags" (click)="setTag(tag, tagsPanel.expanded)">
+			  {{tag}}
+			</mat-chip>
+		  </mat-chip-list>
+		</mat-panel-description>
+	  </mat-expansion-panel-header>
+	  
+	  <mat-chip-list #chipList class="fill-context">
+		<mat-chip *ngFor="let tag of allTags"(click)="setTag(tag.value, true)">
+		  {{tag.value}}
+		</mat-chip>
+	  </mat-chip-list>
+	  
+	</mat-expansion-panel>
+</div>

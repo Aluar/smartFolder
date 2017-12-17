@@ -1,0 +1,11 @@
+<div class="mat-app-background mat-typography">
+	<div class="grupo-flex linea no-wrap spaced2" *ngIf="Title">
+		<h3 class="mat-title">{{Title}}</h3>		
+		<h5 *ngIf="TopLabel" class="mat-subheading-1">{{TopLabel}} {{_top}}</h5>
+		<h5 *ngIf="BottomLabel" class="mat-caption mat-warn mat-color-warn">{{BottomLabel}} {{_bottomtotal}}</h5>
+	</div>
+	<div class="barra-background">
+		<div class="barra-top" [ngStyle]="{'width':_top}"></div>
+		<div [ngStyle]="{'width':_bottom}" [ngClass]="{'barra-bottom':true,'barra-bottom-blue':blue,'barra-bottom-red':red}"></div>
+	</div>
+</div>

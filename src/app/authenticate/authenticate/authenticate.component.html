@@ -1,0 +1,5 @@
+<button 
+	mat-raised-button 
+	class="auth-button-width" 
+	(click)="authButtonClick()"
+	[disabled]="state.connecting">{{state.msg}}</button>

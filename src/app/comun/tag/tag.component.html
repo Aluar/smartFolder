@@ -1,0 +1,5 @@
+<div class="dv-tag mat-app-background mat-typography color-primario grupo-flex linea no-wrap spaced1">
+  <!-- <ng-content></ng-content> -->
+  <h5>{{label}}</h5>
+  <mat-icon *ngIf="showRemove" class="dv-tag-icon mdi mdi-16px mdi-close" (click)="remove.emit(null)"></mat-icon>
+</div>

@@ -1,0 +1,18 @@
+{
+  "name": "smartFolder",
+  "version": "0.1.0",
+  "description": "Smart Folders",
+  "main": "main.js",
+  "scripts": {},
+  "author": {
+    "name": "Daniel Valdivieso",
+    "email": "davpprog@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.7.9",
+    "fd-diskspace": "^1.0.0",
+    "fs-extra": "^4.0.2",
+    "uuid": "^3.1.0"
+  }
+}

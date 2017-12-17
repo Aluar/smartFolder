@@ -1,0 +1,245 @@
+/* You can add global styles to this file, and also import other style files */
+@import "theme.scss";
+html, body, app-root, .app-frame {
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    /*color: #e0e0e0;*/
+}
+mat-sidenav-container{
+	height: 100%;
+}
+mat-sidenav{
+	width: 15em;
+	padding: 1em;
+}
+mat-toolbar{
+	-webkit-app-region: drag;
+  height: 8em !important;
+  padding: 0px !important;
+}
+button , global-message{
+  -webkit-app-region: no-drag;
+}
+.mat-tab-body-wrapper{
+	/*height:fill-available!important;*/
+	height:stretch!important;
+}
+.cuerpo{
+	padding: 1em;
+}
+.color-primario{
+	color: white!important;
+}
+.mat-form-field-wrapper{
+
+}
+video{
+	width:100%;
+  height: 100%;
+}
+.vid{
+  width: 100%;
+  height: 500px;
+  background-color: black;
+}
+/**************************************************************************************/
+.inv{
+	height: 15em;
+	overflow-y: auto;
+}
+
+::-webkit-scrollbar{
+	width: 10px;
+	border-radius: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+	border-radius: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,.3);
+	border-radius: 6px;
+	background-color: #555;
+}
+/**************************************************************************************/
+.grupo-flex {
+  display:  flex!important; /* or inline-flex */
+  flex-wrap:wrap; /*nowrap | wrap | wrap-reverse;*/
+  justify-content: flex-start; /*flex-start | flex-end | center | space-between | space-around;*/
+  align-items:baseline;/* flex-start | flex-end | center | baseline | stretch;*/
+}
+.columna {
+  flex-direction: column; /*row | row-reverse | column | column-reverse;*/
+}
+.linea {
+  flex-direction: row; /*row | row-reverse | column | column-reverse;*/
+}
+.no-wrap{
+  flex-wrap:nowrap; /*nowrap | wrap | wrap-reverse;*/
+}
+.spaced1{
+  justify-content:space-between;
+}
+.spaced2{
+  justify-content:space-around;
+}
+.centrado{
+  align-items:center;/* flex-start | flex-end | center | baseline | stretch;*/
+}
+.alfinal{
+  justify-content: flex-end;/*flex-start | flex-end | center | space-between | space-around | space-evenly;*/
+}
+.fill-context{
+	width:100%!important;
+}
+.fill-height{
+	height:100%;
+}
+/**************************************************************************************/
+.clickadle{}
+.clickadle:hover{
+  box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+  cursor: pointer;
+}
+.clickadle-text{}
+.clickadle-text:hover{
+	text-shadow: 0 0 6px rgba(35, 173, 278, 1);
+	cursor: pointer;
+}
+/**************************************************************************************/
+.text-center{
+	text-align:center;
+}
+.bottom-separator{
+	margin-bottom:1em!important;
+}
+.top-separator{
+	margin-top:1em!important;
+}
+.espacio-interno{
+	padding:1em;
+}
+.hijo{
+	margin:1em;
+}
+.separacion1{
+	margin-bottom:5px;
+}
+.margen-derecho{
+	margin-right:1em!important;
+}
+.margen-izquierdo{
+	margin-left: 1em!important;
+}
+.to-bottom{
+	position:absolute;
+	bottom:0;
+}
+.borde{
+	border: 2px solid grey;
+	border-radius: 8px;
+}
+.ancho-numero{
+	width:12em;
+}
+.espacio-precio{
+	width:15em;
+	padding:1em;
+}
+.contenedor{
+	position:relative;
+}
+.top-top-right{
+	position: absolute!important;
+	top: 0px;
+	right: 5px;
+}
+.top-right{
+	position: absolute!important;
+	top: 1em;
+	right: 1em;
+}
+.boton-right{
+	position: absolute!important;
+	bottom: 1em;
+	right: 1em;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.modal-form{
+	width:20em;
+}
+.lista-seleccion{
+	height:200px;
+}
+.sinmargen{
+	margin:0px!important;
+}
+.margen-estrcho{
+	margin:4px!important;
+}
+.anchomin{
+	min-width:2em;
+}
+/**************************************************************************************/
+.inv-item{
+
+}
+.inv-item-image{
+	width:100%;
+	height:100%;
+	position: absolute;
+}
+.inv-item-text-backgorund{
+	width:100%;
+	height:3em;
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+    bottom: 0px;
+}
+.inv-item-text{
+	text-align:center;
+}
+.inv-item-check{
+	top:1em;
+	right:1em;
+	position: absolute;
+}
+.tab-principal{
+    height: 100%;
+}
+.logo-principal{
+  width:200px;
+}
+/**************************************************************************************/
+.imagen{
+	margin: auto;
+}
+.contenido{
+	padding-left:1em;
+	padding-right:1em;
+}
+.separado{
+	margin-right:0.5em;
+}
+.rojo{
+	color: red;
+}
+.img-banner{
+	margin-right:100px;
+	width:200px;
+}
+.vid-container{
+	width:100%;
+	height:20em;
+}
+.select-check{
+	width:12em!important;
+}

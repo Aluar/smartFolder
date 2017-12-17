@@ -1,0 +1,56 @@
+<!--
+<div class="mat-typography main grupo-flex columan no-wrap spaced1">
+	<div class="fill-context">
+		<div class="">
+			<h2 class="text-center fill-context">{{state.title}}</h2>
+			<button mat-mini-fab class="mdi mdi-24px mdi-close top-right" (click)="dialogRef.close(null)"></button>
+		</div>
+		<mat-form-field class="fill-context">
+		  <input type="email" matInput placeholder="Correo" required [(ngModel)]="datos.mail">
+		</mat-form-field>
+		<div *ngIf="state.showpass">
+			<mat-form-field class="fill-context">
+			  <input type="password" matInput placeholder="Clave" required [(ngModel)]="datos.pass">
+			</mat-form-field>
+		</div>
+		<div class="grupo-flex linea no-wrap spaced1 nowrap">
+			<h6 class="clickadle-text" (click)="select(1)">{{state.leftmsg}}</h6>
+			<span class="fill-context"></span>
+			<h6 class="clickadle-text" (click)="select(0)">{{state.rightmsg}}</h6>
+		</div>
+		<button mat-button class="fill-context bottom-separator" color="primary" (click)="conectar(mailpass)" [disabled]="canMailPass">{{state.button}}</button>
+	</div>
+	<span class="fill-height"></span>
+	<div class="fill-context">
+		<button *ngIf="showGoogle" mat-raised-button class="fill-context bottom-separator" color="primary" (click)="conectar(google)">Google</button>
+		<button *ngIf="showFacebook" mat-raised-button class="fill-context bottom-separator" color="primary" (click)="conectar(facebook)">Facebook</button>
+		<button *ngIf="showGithub" mat-raised-button class="fill-context bottom-separator" color="primary" (click)="conectar(github)">Github</button>
+	</div>
+</div>
+-->
+<div class="mat-typography main">
+	<h1 mat-dialog-title class="fill-context">{{state.title}}</h1>
+	<button mat-icon-button class="mdi mdi-16px mdi-close-circle-outline top-righ" [mat-dialog-close]="null"></button>
+	<div mat-dialog-content class="bottom-separator">
+		<mat-form-field class="fill-context">
+			<input type="email" matInput placeholder="Correo" required [(ngModel)]="datos.mail">
+		</mat-form-field>
+		<div *ngIf="state.showpass">
+			<mat-form-field class="fill-context">
+				<input type="password" matInput placeholder="Clave" required [(ngModel)]="datos.pass">
+			</mat-form-field>
+		</div>
+		<div class="grupo-flex linea no-wrap spaced1 nowrap">
+			<h6 class="clickadle-text" (click)="select(1)">{{state.leftmsg}}</h6>
+			<span class="fill-context"></span>
+			<h6 class="clickadle-text" (click)="select(0)">{{state.rightmsg}}</h6>
+		</div>
+	</div>
+	<div mat-dialog-actions>
+		<button mat-button tabindex="1" class="fill-context bottom-separator" color="primary" (click)="conectar(mailpass)" [disabled]="canMailPass">{{state.button}}</button>
+
+		<button *ngIf="showGoogle" tabindex="2" mat-raised-button class="fill-context bottom-separator" color="primary" (click)="conectar(google)">Google</button>
+		<button *ngIf="showFacebook" tabindex="3" mat-raised-button class="fill-context bottom-separator" color="primary" (click)="conectar(facebook)">Facebook</button>
+		<button *ngIf="showGithub" tabindex="4" mat-raised-button class="fill-context bottom-separator" color="primary" (click)="conectar(github)">Github</button>
+	</div>
+</div>

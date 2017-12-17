@@ -1,20 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<mat-toolbar>
+  <img class="margen-izquierdo logo-principal" src="../assets/mi-dvd-logos-web.png">
+  <span class="fill-context"></span>
+  <global-message class="boton-right"></global-message>
+  <winButtons class="top-top-right" (close)="wbutton(serv.close)" (minimize)="wbutton(serv.mini)"></winButtons>
+</mat-toolbar>
+<waitingBar></waitingBar>
+<div class="path grupo-flex linea no-wrap">
+  <folder path="path" icon="desktop-classic" (selected)="changepath(null)"></folder>
+  <folder [path]="path" *ngFor="let path of pathFolders" (selected)="changepath($event)"></folder>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="grupo-flex linea no-wrap spaced1">
+  <div class="fill-context">
+    <div *ngFor="let folder of folders" class="folder">
+      <h4>{{folder}}</h4>
+    </div>
+  </div>
+  <div class="meta-data-folder">
+    <img class="meta-data-imagen" src="../assets/mi-dvd-logos-web.png">
+    <mat-form-field class="fill-context">
+      <input matInput placeholder="Titulo" required [(ngModel)]="datos.titulo">
+    </mat-form-field>
 
+    <mat-expansion-panel #tagsPanel>
+      <mat-expansion-panel-header>
+      <mat-panel-title>
+        Tags
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-chip-list>
+        <mat-chip *ngFor="let tag of datos.tags; index as i" (click)="setTag(tag, tagsPanel.expanded)">
+          {{tag}}
+        </mat-chip>
+        </mat-chip-list>
+      </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field class="fill-context">
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let tag of tags|async|otoa:{purgeKey:true}"(click)="setTag(tag.value, true)">
+          {{tag.value}}
+        </mat-chip>
+        <input placeholder="All Tags"
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             matChipInputAddOnBlur="true"
+             (matChipInputTokenEnd)="pushTag($event)" />
+      </mat-chip-list>
+      </mat-form-field>
+    </mat-expansion-panel>
+  </div>
+</div>

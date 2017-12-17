@@ -1,0 +1,22 @@
+.folder{
+  text-align: center;
+  margin-bottom: 3px;
+
+}
+.path{
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+.meta-data-folder{
+  width: 40em;
+  height: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: 1px solid grey;
+}
+.meta-data-imagen{
+  margin: 5px;
+  width: 100%;
+  height: 20em;
+}

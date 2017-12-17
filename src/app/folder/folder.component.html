@@ -1,0 +1,4 @@
+<div class="dv-folder mat-typography color-primario" (click)="selected.emit(path)">
+  <h4 *ngIf="!_icon">{{label}}</h4>
+  <div *ngIf="_icon" class="mdi mdi-16px dv-folder-icon" [ngClass]="_icon"></div>
+</div>

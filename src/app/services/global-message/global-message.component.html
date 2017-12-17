@@ -1,0 +1,8 @@
+<div *ngIf="msg.newMSG|async">
+	<mat-icon  
+		[ngClass]="msg.currentMsg.icon"  
+		[matTooltip]="msg.currentMsg.mensaje" 
+		[color]="msg.currentMsg.color"
+		(click)="msg.showBar()">
+	</mat-icon>
+</div>

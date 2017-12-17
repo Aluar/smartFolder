@@ -1,0 +1,9 @@
+.main{
+	width:25em;
+	position:relative;
+}
+.top-righ{
+	position: absolute;
+	top:0px;
+	right:0px;
+}

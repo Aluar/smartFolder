@@ -1,0 +1,13 @@
+<div class="grupo-flex linea no-wrap spaced1 bottom-separator">
+	<filter class="fill-context" [allTags]="Tags" (onFilter)="filtrar($event)"></filter>
+	<button *ngIf="_post_icon" mat-icon-button [ngClass]="_post_icon" (click)="_post_clicl()"></button>
+</div>
+<mat-grid-list cols="{{Column}}" class="inv" gutterSize="{{_separacion}}">
+  <mat-grid-tile *ngFor="let item of _items" class="mat-typography lista-item clickadle" (click)="_itemClick(item)">
+		<img src="{{_imagen(item)}}" class="lista-item-image">
+		<div class="lista-item-text">
+			<h6>{{_texto(item)}}</h6>
+		</div>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-paginator *ngIf="PageSize" [length]="_items.length" [pageSize]="PageSize" (page)="_pageEvent = $event"></mat-paginator>

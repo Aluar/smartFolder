@@ -1,0 +1,18 @@
+//@import '~@angular/material/theming';
+@import "theme_variables.scss";
+
+@include mat-core();
+
+$app-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+$toolbar-light-theme: mat-light-theme($toolbar-primary, $toolbar-accent);
+$toolbar-dark-theme: mat-dark-theme($toolbar-primary, $toolbar-accent);
+
+$sidenav-light-theme: mat-theme($light, $sidenav-primary, $sidenav-accent, $app-warn, $sidenav-foreground, $sidenav-background);
+$sidenav-dark-theme:  mat-theme($dark, $sidenav-primary, $sidenav-accent, $app-warn, $sidenav-foreground, $sidenav-background);
+
+@include angular-material-theme($app-dark-theme);
+
+//@include mat-toolbar-theme($toolbar-light-theme);
+//@include mat-sidenav-theme($sidenav-dark-theme);

@@ -1,0 +1,17 @@
+.lista-item{
+	background-color: black;
+}
+
+.lista-item-text{
+	width:100%;
+	height:3em;
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+  bottom: 0px;
+	text-align:center;
+}
+
+.lista-item-image{
+	max-height: 100%;
+	max-width: 100%;  
+}
