@@ -1,5 +1,6 @@
 export const COMMA = 188;
 export const SEP = "/";
+export const PATHSEP = "\\";
 
 export const PRECIOS = "config/tienda/precios";
 export const CONFIGVIDEOS = "config/video";
@@ -17,6 +18,8 @@ export const SERVDI = 'drives-info';
 export const SERVDL = 'dirrectori-list';
 export const SERVNW = 'show-window';
 export const SERVWM = 'winmsg';
+export const SERVRF = 'readfile';
+export const SERVWF = 'writefile';
 export const SERVDBPUSH = 'push';
 export const SERVDBGET = 'get';
 export const SERVDBSET = 'set';

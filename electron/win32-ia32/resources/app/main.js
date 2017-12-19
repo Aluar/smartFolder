@@ -21,6 +21,8 @@ const servDBGET = 'get';
 const servDBSET = 'set';
 const servDBREMOVE = 'remove';
 const servDBOBSERVER = 'observe';
+const servRF = 'readfile';
+const servWF = 'writefile';
 
 let db;
 
@@ -145,4 +147,18 @@ ipc.on(servMINIMIZE, function (event, args)
 			mainWindow.minimize();
 		}else
 			windows.minimize(args.winname);
+})
+
+ipc.on(servRF, function (event,args)
+{
+	files.readfile(args.file)
+		.then((data) => event.sender.send(servRF, {data:data}))
+		.catch((err) => event.sender.send(servRF, {error:err}))
+})
+
+ipc.on(servWF, function (event,args)
+{
+	files.writefile(args.file, args.data)
+		.then((data) => event.sender.send(servWF, {succed:true}))
+		.catch((err) => event.sender.send(servWF, {succed:false, error:err}))
 })

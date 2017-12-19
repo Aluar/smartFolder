@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { SEP } from '../../environments/constant';
+import { PATHSEP } from '../../environments/constant';
 
 @Component({
   selector: 'folder',
@@ -16,9 +16,7 @@ export class FolderComponent {
 
   get label()
   {
-console.log(this.path);
-    let a = this.path.split(SEP);
-
+    let a = this.path.split(PATHSEP);
     if (a.length > 0)
       return a[a.length - 1];
 
@@ -28,6 +26,6 @@ console.log(this.path);
   @Input() set icon(i:string)
   {
     if (i)
-      this._icon = `mdi-` + i;
+      this._icon = 'mdi-' + i;
   }
 }
