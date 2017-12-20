@@ -18,12 +18,18 @@ import { AuthenticateModule } from './authenticate/authenticate.module';
 
 import { AppComponent } from './app.component';
 import { FolderComponent } from './folder/folder.component';
+import { PathComponent } from './path/path.component';
+import { FoldersComponent } from './folders/folders.component';
+import { MetaDataComponent } from './meta-data/meta-data.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FolderComponent
+    FolderComponent,
+    PathComponent,
+    FoldersComponent,
+    MetaDataComponent
   ],
   imports: [
     BrowserModule,

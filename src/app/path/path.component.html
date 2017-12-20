@@ -1,0 +1,4 @@
+<div class="grupo-flex linea no-wrap scroll">
+  <folder path="path" icon="desktop-classic" (selected)="dir.changePath(null)" class="path-folder"></folder>
+  <folder [path]="path" *ngFor="let path of dir.path|async|pathA" (selected)="dir.changePath($event)" class="path-folder"></folder>
+</div>

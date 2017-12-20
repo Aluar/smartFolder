@@ -92,6 +92,9 @@ video{
 .centrado{
   align-items:center;/* flex-start | flex-end | center | baseline | stretch;*/
 }
+.full-content{
+  align-items:stretch;/* flex-start | flex-end | center | baseline | stretch;*/
+}
 .alfinal{
   justify-content: flex-end;/*flex-start | flex-end | center | space-between | space-around | space-evenly;*/
 }
@@ -243,6 +246,19 @@ video{
 }
 .logo-principal{
   width:200px;
+}
+.separador-vertical{
+  width: 2px;
+  height: 100%;
+  border-left: 1px solid grey;
+}
+.separador-horizontal{
+  width: 100%;
+  height: 5px;
+  border-bottom: 1px solid grey;
+}
+.fullHeight{
+  height: 100%;
 }
 /**************************************************************************************/
 .imagen{

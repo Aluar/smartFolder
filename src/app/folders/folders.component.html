@@ -1,0 +1,5 @@
+<mat-list>
+ <mat-list-item *ngFor="let folder of dir.folders|async" class="folders-item">
+   <folder [path]="folder.fullFileName" (selected)="dir.changePath($event)" class="fill-context"></folder>
+ </mat-list-item>
+</mat-list>

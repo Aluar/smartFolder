@@ -1,53 +1,16 @@
 <mat-toolbar>
-  <img class="margen-izquierdo logo-principal" src="./assets/mi-dvd-logo.png">
+  <img class="margen-izquierdo logo-principal" src="../assets/mi-dvd-logo.png">
   <span class="fill-context"></span>
   <global-message class="boton-right"></global-message>
   <winButtons class="top-top-right" (close)="wbutton(serv.close)" (minimize)="wbutton(serv.mini)"></winButtons>
 </mat-toolbar>
 <waitingBar></waitingBar>
-<div class="desactivable scroll" [ngClass]="{disableddiv:waiting}">
-	<div class="path grupo-flex linea no-wrap scroll">
-	  <folder path="path" icon="desktop-classic" (selected)="changepath(null)" class="path-folder"></folder>
-	  <folder [path]="path" *ngFor="let path of pathFolders" (selected)="changepath($event)" class="path-folder"></folder>
-	</div>
-	<div class="grupo-flex linea no-wrap mat-typography color-primario">
-	  <div class="fill-context">
-		<folder [path]="path.fullFileName" *ngFor="let path of folders" (selected)="changepath($event)" class="fill-context"></folder>
-	  </div>
-	  <div class="meta-data-folder">
-		<div class="imagen">
-			<img class="meta-data-imagen" src="./assets/mi-dvd-logo.png">
-		</div>		
-		<mat-form-field class="fill-context">
-		  <input matInput placeholder="Titulo" required [(ngModel)]="datos.titulo">
-		</mat-form-field>
-
-		<mat-expansion-panel #tagsPanel>
-		  <mat-expansion-panel-header>
-		  <mat-panel-title>
-			Tags
-		  </mat-panel-title>
-		  <mat-panel-description>
-			<mat-chip-list>
-			<mat-chip *ngFor="let tag of datos.tags; index as i" (click)="setTag(tag, tagsPanel.expanded)">
-			  {{tag}}
-			</mat-chip>
-			</mat-chip-list>
-		  </mat-panel-description>
-		  </mat-expansion-panel-header>
-		  <mat-form-field class="fill-context">
-		  <mat-chip-list #chipList>
-			<mat-chip *ngFor="let tag of tags|async|otoa:{purgeKey:true}"(click)="setTag(tag.value, true)">
-			  {{tag.value}}
-			</mat-chip>
-			<input placeholder="All Tags"
-				 [matChipInputFor]="chipList"
-				 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-				 matChipInputAddOnBlur="true"
-				 (matChipInputTokenEnd)="pushTag($event)" />
-		  </mat-chip-list>
-		  </mat-form-field>
-		</mat-expansion-panel>
-	  </div>
+<div class="desactivable scroll fullHeight" [ngClass]="{disableddiv:w.State}">
+  <path></path>
+  <div class="separador-horizontal"></div>
+	<div class="grupo-flex linea no-wrap full-content mat-typography color-primario fullHeight">
+    <folders class="fill-context"></folders>
+    <div class="separador-vertical"></div>
+    <meta-data class="meta-data"></meta-data>
 	</div>
 </div>

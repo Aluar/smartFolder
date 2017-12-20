@@ -11,6 +11,7 @@ import { RouterService } from './router.service';
 import { WaitingService } from './waiting.service';
 import { LocaldbService } from './localdb.service';
 import { ElectronMsgService } from './electron-msg.service';
+import { DirService, PathArray } from './dir.service';
 
 import { GlobalMessageComponent } from './global-message/global-message.component';
 import { WaitingComponent } from './waiting/waiting.component';
@@ -22,7 +23,8 @@ import { WaitingComponent } from './waiting/waiting.component';
   ],
   declarations: [
   	GlobalMessageComponent,
-  	WaitingComponent
+  	WaitingComponent,
+    PathArray,
   ],
   providers: [
   	ConfigService,
@@ -33,10 +35,12 @@ import { WaitingComponent } from './waiting/waiting.component';
   	WaitingService,
     LocaldbService,
     ElectronMsgService,
+    DirService,
   ],
   exports: [
   	GlobalMessageComponent,
-  	WaitingComponent
+  	WaitingComponent,
+    PathArray,
   ]
 })
 export class ServicesModule { }

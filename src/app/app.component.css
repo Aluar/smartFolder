@@ -27,3 +27,7 @@
 .scroll{
 	overflow:auto;
 }
+.meta-data{
+  width: 40em;
+  height: 100%;
+}

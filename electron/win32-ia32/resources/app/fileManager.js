@@ -80,18 +80,18 @@ module.exports =
 			{
 				if(err) reject(err);
 
-				let res = (files)? files.map((name, index, array) => 
+				let res = (files)? files.map((name, index, array) =>
 				{
 					let fn = path.join(dir, name);
 					let b = {fileName:path.basename(name, path.extname(name)),
 							fileExt:path.extname(name).slice(1),
-							fullFileName:fn							
+							fullFileName:fn
 							};
-							
+
 					try
 					{
 						let a = fs.statSync(fn);
-						
+
 						b.isFile = a.isFile();
 						b.isDirectory = a.isDirectory();
 						b.size = a.size;
@@ -105,7 +105,7 @@ module.exports =
 						b.group = {execute:(a.mode && 10),write:(a.mode && 20),read:(a.mode && 40)};
 						b.owner = {execute:(a.mode && 100),write:(a.mode && 200),read:(a.mode && 400)};
 						b.isArchive = a.mode && 1000;
-						b.isSystem = a.mode && 2000;						
+						b.isSystem = a.mode && 2000;
 						b.isHidden = a.mode && 4000;
 /*
        The following flags are defined for the st_mode field:
@@ -140,24 +140,19 @@ module.exports =
 					}
 					return b;
 				}) : [];
-				
+
 				resolve(res);
 			});
 		});
 	},
-	
+
 	readfile : function (file)
-	{	
+	{
 		return new Promise((resolve, reject) =>
 			{
 console.log("main readfile");
-				fs.readFile(file,  (err, data) => 
+				fs.readFile(file,  (err, data) =>
 				{
-
-console.log("error");
-console.log(err);
-console.log("data");
-console.log(data);
 					if (err)
 						reject(err);
 
@@ -165,12 +160,12 @@ console.log(data);
 				})
 			});
 	},
-	
+
 	writefile : function (file, data)
 	{
 		return new Promise((resolve, reject) =>
 			{
-				fs.writeFile(file, data,  (err) => 
+				fs.writeFile(file, data,  (err) =>
 				{
 					if (err)
 						reject(err);
