@@ -9,7 +9,15 @@ import { SERVWF, SERVRF, SERVDL, SERVDI, PATHSEP } from '../../environments/cons
 
 const ENT = String.fromCharCode(13);
 const CERO = String.fromCharCode(0);
-
+const INIStruct =
+	{
+		Prop2:{key:"title", label:"Title", value:""},
+		Prop3:{key:"subject", label:"Subject", value:""},
+		Prop4:{key:"author", label:"Author", value:""},
+		Prop5:{key:"tags", label:"Tags", value:[]},
+		Prop6:{key:"comment", label:"Comment", value:""}		
+	}
+	
 export interface ini{
   path:string,
   data:any
@@ -83,27 +91,26 @@ export class DirService {
     if (path && (path != ""))
       this.es.electronFunction(SERVRF, {file:path+"\\desktop.ini"}).then((arg) =>
       {
-        /*
-        [{F29F85E0-4FF9-1068-AB91-08002B27B3D9}]
-        Prop2=31,Title
-        Prop3=31,Subject
-        Prop4=31,Author
-        Prop5=31,Salsa;Guaco
-        Prop6=31,Comment
-        */
+		if (arg && !arg.hasOwnProperty("error"))
+		{
+			let a = String.fromCharCode.apply(null, arg.data.filter((item) => (item != 0)));
 
-    		  if (arg && !arg.hasOwnProperty("error"))
-    		  {
-//console.log(arg.data);
-            let x = arg.data.filter((item) => (item != 0));
-            let a = String.fromCharCode.apply(null, x);
-console.log(arg.data);
-console.log(x);
+			let b = a.split(ENT).filter((item) => 
+				{
+					return item.includes('Prop');
+				}).map((item) =>
+				{
+					let x = INIStruct[item.slice(1,6)];
 
-            let b = a.replace(CERO, "").split(ENT);
-console.log(b);
-            this._desktopIni.next({path:path, data:a});
-    		  }
+					let z = item.split(",")[1];
+					
+					x.value = (x.key == "tags")? z.split(";") : z;				
+					
+					return x;
+				});
+				
+			this._desktopIni.next({path:path, data:b});
+		}
       });
     else
       this._desktopIni.next({path:"", data:{}});

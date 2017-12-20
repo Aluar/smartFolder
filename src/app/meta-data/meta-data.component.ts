@@ -21,10 +21,22 @@ export class MetaDataComponent implements OnInit {
   {
     this.tags = this.db.observe(TAGS);
 
-    this.dir.desktopIni.subscribe((data) =>
+    this.dir.desktopIni.subscribe((desktopIni) =>
     {
 console.log("MetaData desktopIni");
-console.log(data);
+console.log(desktopIni);
+		for (let item of desktopIni.data)
+		{
+			switch(item.key)
+			{
+				case "title":
+					this.datos.titulo = item.value;
+					break;
+				case "tags":
+					this.datos.tags = item.value;
+					break;
+			}
+		}
     });
   }
 
@@ -49,9 +61,7 @@ console.log(data);
     if ((value || '').trim())
 		  this.db.push(TAGS, value.trim());
 
-    // Reset the input value
-    if (input) {
+    if (input)
       input.value = '';
-    }
   }
 }
